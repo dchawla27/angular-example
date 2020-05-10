@@ -1,0 +1,16 @@
+<div class="card-deck mb-3 text-center">
+  <div *ngIf="allData">
+    <ng-container *ngFor="let data of allData;let idx = index">
+      <div class="col-sm-3" style="float: left;">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">{{data.first_name}} {{data.last_name}}</h4>
+        </div>
+        <div class="card-body">
+          {{data.email}}
+          {{data.gender}}<br />
+          {{data.ip_address}}
+        </div>
+      </div>
+      <div *ngIf="(idx+1) % 4 == 0" class="col-sm-12" style="float: left;"></div>
+    </ng-container>
+  </div>
